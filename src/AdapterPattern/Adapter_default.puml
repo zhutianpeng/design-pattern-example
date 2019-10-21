@@ -1,0 +1,24 @@
+@startuml
+
+class AbstractService{
++method1()
++method2()
++method3()
++method4()
+}
+
+class ServiceAdapter{
++method1()
++method2()
++method3()
++method4()
+}
+
+class Class{
++method1()
++method2()
+}
+
+AbstractService <|.right. ServiceAdapter
+ServiceAdapter<|-right- Class
+@enduml
