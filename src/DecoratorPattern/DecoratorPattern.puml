@@ -1,0 +1,28 @@
+@startuml
+interface Shape{
+    draw()
+}
+
+class Rectangle{
+    draw()
+}
+class Cicle{
+    draw()
+}
+
+Rectangle .up.|>Shape
+Cicle .up.|>Shape
+
+abstract class ShapeDecorator{
+    Shape
+    draw()
+}
+class RedShapeDecorator{
+    Shape
+    draw()
+    setRedBorder()
+}
+
+ShapeDecorator o.left.|>Shape
+RedShapeDecorator -up-|>ShapeDecorator
+@enduml
