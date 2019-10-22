@@ -1,0 +1,28 @@
+@startuml
+package "策略" #DDDDDD {
+    interface Strategy{
+        doOperation()
+    }
+    class OperationAdd{
+        doOperation()
+    }
+    class OperationMultiply{
+        doOperation()
+    }
+    class OperationSubstract{
+        doOperation()
+    }
+
+    OperationAdd .up.|> Strategy
+    OperationSubstract .up.|> Strategy
+    OperationMultiply .up.|> Strategy
+}
+class Context{
+    Stragtegy
+    executeStrategy()
+}
+class Main{
+}
+Strategy -left-o Context
+Main ..> Context
+@enduml
