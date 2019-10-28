@@ -1,0 +1,22 @@
+@startuml
+class TCPConnection{
+}
+
+class TCPState{
+}
+
+class TCPListen{
+}
+
+class TCPEstablish{
+}
+
+class TCPClose{
+}
+
+TCPListen --up|> TCPState
+TCPEstablish --up|> TCPState
+TCPClose --up|> TCPState
+
+TCPConnection o-right-TCPState
+@enduml

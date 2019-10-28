@@ -1,0 +1,25 @@
+@startuml
+package "状态模式" #DDDDDD {
+    interface State{
+        handle(String parameter)
+    }
+    class StartState{
+        handle(String parameter)
+    }
+    class StopState{
+        handle(String parameter)
+    }
+    class Context{
+        State
+        changeState(State)
+        request(String parameter)
+    }
+}
+class Main{
+}
+
+StartState .up.|> State
+StopState  .up.|> State
+Context o-->State
+Main .down.>Context
+@enduml

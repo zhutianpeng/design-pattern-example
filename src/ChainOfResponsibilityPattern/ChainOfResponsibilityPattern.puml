@@ -1,0 +1,25 @@
+@startuml
+package "责任链模式" #DDDDDD {
+    abstract class AbstractLogger{
+        AbstractLogger nextLogger
+    }
+    class ConsoleLogger{
+    }
+    class FileLogger{
+    }
+    class ErrorLogger{
+    }
+
+    ConsoleLogger -up-|> AbstractLogger
+    FileLogger -up-|> AbstractLogger
+    ErrorLogger -up-|> AbstractLogger
+    AbstractLogger  <--o AbstractLogger
+
+    ErrorLogger .right.> FileLogger
+    FileLogger .right.> ConsoleLogger
+}
+class Main{
+}
+
+Main ..> AbstractLogger
+@enduml
