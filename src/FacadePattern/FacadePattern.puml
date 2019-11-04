@@ -1,0 +1,31 @@
+@startuml
+package "门面模式" #DDDDDD {
+    interface Shape{
+        draw()
+    }
+    class Rectangle{
+        draw()
+    }
+    class Circle{
+        draw()
+    }
+    class Sqare{
+        draw()
+    }
+    Rectangle .up.|>Shape
+    Circle .up.|>Shape
+    Sqare .up.|>Shape
+
+    class ShapeMaker{
+        drawCircle()
+        drawRectangle()
+        drawSquare()
+    }
+    ShapeMaker ..>Shape
+}
+class Main{
+}
+
+Main ..> ShapeMaker
+
+@enduml

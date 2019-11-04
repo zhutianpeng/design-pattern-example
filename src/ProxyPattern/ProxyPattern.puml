@@ -1,0 +1,24 @@
+@startuml
+package "代理模式" #DDDDDD {
+    interface Image{
+        display()
+    }
+
+    class RealImage{
+        display()
+    }
+
+    class ProxyImage{
+        display()
+    }
+
+    RealImage .up.|>Image
+    ProxyImage .up.|>Image
+    ProxyImage o.up. RealImage
+}
+
+class Main{
+}
+
+Main .right.>ProxyImage
+@enduml
